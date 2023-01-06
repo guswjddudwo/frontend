@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <style>
+    .image-slide .swiper {
+      width: 600px;
+      height: 300px;
+    }
+
+    .image-slide .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .text-slide .swiper {
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-slide">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://via.placeholder.com/1920x1080" alt="sample">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://via.placeholder.com/1920x1080" alt="sample">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://via.placeholder.com/1920x1080" alt="sample">
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+  <div class="text-slide">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="javascript:void(0)">크리스마스 & 연말연시 매장 영업시간 변경 안내</a>
+        </div>
+        <div class="swiper-slide">
+          <a href="javascript:void(0)">[당첨자 발표] 커피 영수증 이벤트</a>
+        </div>
+        <div class="swiper-slide">
+          <a href="javascript:void(0)">애플리케이션 버전 업데이트 안내</a>
+        </div>
+        <div class="swiper-slide">
+          <a href="javascript:void(0)">[당첨자 발표] 전자영수증 이벤트</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const imageSwiper = new Swiper('.image-slide .swiper', {
+      direction: 'horizontal',
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      }
+    });
+
+    const textSwiper = new Swiper('.text-slide .swiper', {
+      direction: 'vertical',
+      loop: true,
+      autoplay: {
+        delay: 2000
+      }
+    });
+  </script>
+</body>
+</html>
