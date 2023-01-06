@@ -12,7 +12,11 @@
 
     // 풀이2
     const userName = prompt('당신의 영문 이름은?', '');
-
+    document.write(userName.toUpperCase(), '<br>'); // 대문자로 변환
+    
+    const hpNum = prompt('핸드폰 번호를 입력하세요');
+    const maskNum = hpNum.substring(0, hpNum.length - 4) + '****';
+    document.write(maskNum,'<br>')
     
   </script>
 </head>
