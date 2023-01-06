@@ -16,9 +16,19 @@
     const arr = [];
 
     // 풀이6
-    for(let i = 0; i< 5; i++){
-      prompt('배열에 넣을 데이터를 입력하세요');
+    for(let i = 0; i< arrLength; i++){
+      // const date = prompt('배열에 넣을 데이터를 입력하세요');
+      // arr[1] = prompt('배열에 넣을 데이터를 입력하세요');
+      // arr.push(prompt('배열에 넣을 데이터를 입력하세요'));
+      // arr.push(date);
     }
+
+    // 유효성 검사
+    if (arr.length > 0) {
+      document.write(arr.shift(),'<br>');
+      document.write(arr.pop(),'<br>');
+    }
+
     
   </script>
 </head>
