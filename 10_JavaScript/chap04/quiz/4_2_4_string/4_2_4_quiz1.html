@@ -16,10 +16,18 @@
 
     // 풀이1
 
-    document.write(ssn.charAt(8));
-    if(ssn){
-      
+    document.write(ssn.charAt(7));
+    switch (gender) {
+      case '1':
+      case '3':
+        msg = '남자입니다';        
+        break;
+        case '2':    
+        case '4':
+          msg = '여자입니다.';  
+        break;
     }
+    document.write(ssn);
     
   </script>
 </head>

@@ -15,7 +15,20 @@
     const str = prompt('숫자를 입력하세요.');
     const result = [];
 
-    // 풀이4
+    // 풀이4    
+    
+    for (let i = 0; i < str.length; i++) {
+      if(str % 2 === 0) {
+        result.push('-');
+      }
+      result.push(str[i]);
+    }
+
+    console.log(result);
+
+
+
+
     
   </script>
 </head>
