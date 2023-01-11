@@ -15,13 +15,16 @@
 
     // 풀이3
   
-    function printNumbers(5, 10) {     
-      const counter = setInterval(function() {
-        from++;
-        console.log('from:' + min);
-      },3000);
-    }
 
+    function printNumbers(from,to) {     
+      const timerId = setInterval(function() {
+        document.write(from);
+        if (from >= to) {
+          clearInterval(timerId);
+        }
+        from++;
+      },1000);
+    }
     
     printNumbers(5, 10);
   </script>

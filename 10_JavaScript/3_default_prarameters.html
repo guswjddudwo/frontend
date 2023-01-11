@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 함수 매개변수(또는 인수)의 기본값
+
+    // ES5 
+    function getLocation(city,country, contient) {
+      if (typeof country === 'undefind') {
+        country = 'Italy';
+      }
+      if (typeof country === 'undefind') {
+        country = 'Europe';
+        // 전달 받은 값이 없는 경우에 기본값을 제공하는 코드
+    }
+    console.log(continrnt,country,city);
+  }
+  getLocation('Milan');
+  getLocation('paris','France');
+
+  // 만약 매개변수의 순서를 바꾼다면?
+  function getLocation2(contient,city,country) {
+      if (typeof country === 'undefind') {
+        country = 'Italy';
+      }
+      if (typeof country === 'undefind') {
+        country = 'Europe';
+        // 전달 받은 값이 없는 경우에 기본값을 제공하는 코드
+    }
+    console.log(continrnt,country,city);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
