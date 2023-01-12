@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="file">
+  <input type="file" multiple>
 
   <script>
     // 문제5
@@ -27,18 +27,16 @@
     // });
 
     // 풀이5
-
-
     const imgFileExt = ['jpg', 'png', 'gif'];
     let fileExt;
     const fileInput = document.querySelector('input[type=file]');
 
     fileInput.addEventListener('change', function () {
       // debugger;
-      // console.log(fileInput);
-      // console.log(fileInput.files);
-      // console.log(fileInput.files[0]);
-
+      console.log(fileInput); // input DOM
+      console.log(fileInput.files); // FileList 객체
+      console.log(Array.from(fileInput.files)); // FileList 객체를 실제 배열로 변환
+      console.log(fileInput.files[0]); // File 객체      
       const fileName = fileInput.files[0].name;
       fileExt = fileName.substring(fileName.lastIndexOf('.') + 1).toLowerCase(); 
       console.log(fileExt);
@@ -53,7 +51,6 @@
       //   alert('이미지 파일이 아닙니다!');
       // }
     });
-    
   </script>
 </body>
 </html>
