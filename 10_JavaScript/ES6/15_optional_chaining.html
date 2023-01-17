@@ -81,7 +81,32 @@
     // 두 사람의 졸업 연도에 접근하고 싶다면..?
     const ceos = [elon, mark];
 
+    // 옵셔널 체이닝 미사용
+    let graduationYear;
+    for (const ceo of ceos) {
+      if (ceo.education &&
+          ceo.education.university && 
+          ceo.education.university.graduation) {
+        graduationYear = ceo.education.university.graduation.year;
+      }
+    }
 
+    // 옵셔널 체이닝 사용
+    for (const ceo of ceos) {
+      graduationYear = ceo.education?.university?.graduation?.year;
+      
+    }
+
+    // Q. 3 , 3
+    // const user = {
+    //   name: 'Alberto',
+    //   age: 27,
+    //   work: {
+    //     title: 'sw developer'
+    //   },
+    // };
+    // const res = user?.work?.location ? user?.work?.location : user?.work?.title;
+    // console.log(res); 
 
 
 
