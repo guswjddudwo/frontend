@@ -170,22 +170,17 @@
     const id = prompt('아이디를 입력하세요.');
     const password = prompt('비밀번호를 입력하세요.');
 
-    loginUser(id, password)
-      .then(userId => { // 로그인이 성공하면 그러면
-        return getRoles(userId); // userId 값을 통해 권한 정보를 얻는 getRoles() 호출
-      })
-      .then(userInfo => { // 권한 정보를 얻어오면 그러면 alert창 띄움
-        alert(`Welcome ${userInfo.name} (${userInfo.role})`);
-      })
-      .catch(err => { // 에러 핸들링
-        console.error(err);
-      });
-
     // 1. 가장 먼저 해야될 것: async 함수 만들기
-
-
-
-
+    const loginAndGetRoles = async () => {
+      try {
+        const userId = await loginUser(id, password);
+        const userInfo = await getRoles(userId);
+        alert(`Welcome ${userInfo.name} (${userInfo.role})`);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    loginAndGetRoles();
   </script>
 </head>
 <body>
