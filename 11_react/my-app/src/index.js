@@ -9,6 +9,8 @@ import Clock from './chapter4/Clock';
 import PropUse from './chapter5/5.3/PropUse';
 import CommentList from './chapter5/CommentList';
 import NotificationList from './chapter6/NotificationList';
+import Counter from './chapter7/7.2/Counter';
+import CounterEffectr from './chapter7/7.3/CounterEffect';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -32,7 +34,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // 5장 예제
 root.render(
   // <PropUse />
-  <NotificationList />
+  <CounterEffectr />
 );
 
 // If you want to start measuring performance in your app, pass a function
