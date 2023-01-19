@@ -1,4 +1,6 @@
 function Profile(props) {
+  console.log(props);
+
   return (
     <div>
       <h1>사용자 프로필(조회수: {props.viewCount})</h1>
