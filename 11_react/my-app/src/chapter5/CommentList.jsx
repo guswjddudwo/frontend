@@ -13,7 +13,15 @@ const comments = [
   {
     name:'이이경',
     comment:'저도 리액트 배워보고 싶어요!!'
-  }
+  },
+  {
+    name:'미주',
+    comment:'리액트가 뭐야?'
+  },
+  {
+    name:'유재',
+    comment:'리액트 재밌다~'
+  },
 ];
 
 // 댓글들을 포함하는 CommentList 컴포넌트
@@ -25,9 +33,15 @@ function CommentList(props) {
       리액트 엘리먼트로 이루어진 배열로 변환해주면 됨  */}
       {comments.map((comment, index) => {
         return (
-          <Comment name={comment.name} comment={comment.comment} />
+          <Comment key={index} name={comment.name} comment={comment.comment} />
         );
       })}
+      {/* map() 함수 결과*/}
+      {/* {[
+        <Comment name={"김재현"} comment={"댓글입니다"} />,
+        <Comment name={"이이경"} comment={"댓글"} />,
+        <Comment name={"미주"} comment={"댓글입니다"} />
+      ]} */}
     </div>
   );
 }
