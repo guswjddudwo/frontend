@@ -1,18 +1,26 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import JsxUse from "./chapter3/3.4/JsxUse";
-import Library from "./chapter3/Library";
-import Clock from "./chapter4/Clock";
-import PropUse from "./chapter5/5.3/PropUse";
-import CommentList from "./chapter5/CommentList";
-import NotificationList from "./chapter6/NotificationList";
-import Counter from "./chapter7/7.2/Counter";
-import CounterEffect from "./chapter7/7.3/CounterEffect";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import JsxUse from './chapter3/3.4/JsxUse';
+import Library from './chapter3/Library';
+import Clock from './chapter4/Clock';
+import PropUse from './chapter5/5.3/PropUse';
+import CommentList from './chapter5/CommentList';
+import NotificationList from './chapter6/NotificationList';
+import Counter from './chapter7/7.2/Counter';
+import CounterEffect from './chapter7/7.3/CounterEffect';
+import SetStateMerge from './chapter7/7.2/SetStateMerge';
+import EffectSummary from './chapter7/7.3/EffectSummary';
+import EffectContainer from './chapter7/7.3/EffectContainer';
+import TimerContainer from './chapter7/7.3/TimerContainer';
+import HeavyCalculator from './chapter7/7.4/HeavyCalculator';
+import ParentComponent from './chapter7/7.5/ParentComponent';
+import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
+import ComponentVariable from './chapter7/7.6/ComponentVariable';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
 //   <App />
 // );
@@ -45,7 +53,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // 7장 예제
 root.render(
   // <Counter />
-  <CounterEffect />
+  // <CounterEffect />
+  // <SetStateMerge />
+  // <EffectSummary />
+  // <EffectContainer />
+  // <TimerContainer />
+  // <HeavyCalculator />
+  // <ParentComponent />
+  // <TextInputWithFocusButton />
+  <ComponentVariable />
 );
 
 // If you want to start measuring performance in your app, pass a function
