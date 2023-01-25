@@ -19,6 +19,7 @@ import HeavyCalculator from './chapter7/7.4/HeavyCalculator';
 import ParentComponent from './chapter7/7.5/ParentComponent';
 import TextInputWithFocusButton from './chapter7/7.6/TextInputWithFocusButton';
 import ComponentVariable from './chapter7/7.6/ComponentVariable';
+import InputContainer from './chapter7/7.8/ex2/InputContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -61,7 +62,8 @@ root.render(
   // <HeavyCalculator />
   // <ParentComponent />
   // <TextInputWithFocusButton />
-  <ComponentVariable />
+  // <ComponentVariable />
+  <InputContainer />
 );
 
 // If you want to start measuring performance in your app, pass a function
