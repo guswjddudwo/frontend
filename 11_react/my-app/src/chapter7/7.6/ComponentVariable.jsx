@@ -10,6 +10,9 @@ function ComponentVariable() {
   let id = 1;
   console.log(id);
 
+  // 매번 렌더링 될 때마다 항상 같은 레퍼런스 객체를 반환
+  // 즉, 렌더링 될 때 값이 초기화 되지 않음
+  // 렌더링과 관련 없는 데이터에는 useRef()를 사용
   const idRef = useRef(1);
   console.log(idRef);
 
