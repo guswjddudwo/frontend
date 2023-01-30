@@ -61,7 +61,8 @@ function App() {
           <hr/>
 
           <span onClick={() => {
-            const copyLikecount = [...likeCount]
+            const copyLikecount = [...likeCount];
+            
           }}>🎭 {likeCount[index]}</span>
         </div>
         )
