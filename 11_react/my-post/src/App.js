@@ -60,8 +60,9 @@ function App() {
               <span onClick={() => {
                 const copyLikeCount = [...likeCount];
                 // TODO: 
+                copyLikeCount[index]+=1;
               }}
-              >💗 {likeCount[index]}</span>
+              >💍 {likeCount[index]}</span>
 
             </div>
           );
