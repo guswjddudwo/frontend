@@ -30,15 +30,17 @@ import Mailbox from './chapter9/9.3/Mailbox';
 import LoginControlRefactoring from './chapter9/9.3/LoginControlRefactoring';
 import MainPage from './chapter9/9.4/MainPage';
 import LandingPage from './chapter9/LandingPage';
-import NumberList from './chaptr10/10.1/NumberList';
-import AttrndanceBook from './chaptr10/AttrndanceBook';
+import NumberList from './chapter10/10.1/NumberList';
+import AttendanceBook from './chapter10/AttendanceBook';
 import NameForm from './chapter11/11.2/NameForm';
 import EssayForm from './chapter11/11.3/EssayForm';
 import FlavorForm from './chapter11/11.3/FlavorForm';
 import FileInput from './chapter11/11.3/FileInput';
 import Reservation from './chapter11/11.4/Reservation';
-import SignUp from './chapter11/SignUp';
 import ReservationRefactoring from './chapter11/11.4/ReservationRefactoring';
+import SignUp from './chapter11/SignUp';
+import Calculator from './chapter12/Calculator';
+import WelcomeDialog from './chapter13/13.1.1.1/WelcomeDialog';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -94,35 +96,43 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // );
 
 // 9장 예제
-// const messages = ['React', 'Re: React', 'Re:Re: React'];
+const messages = ['React', 'Re: React', 'Re:Re: React'];
 // const messages = [];
-root.render(
-  // <Greeting isLoggedIn={true} />
-  // <LoginControl />
-  // <Mailbox unreadMessages={messages} />
-  // <LoginControlRefactoring />
-  // <MainPage />
-  // <LandingPage />
-);
-
+// root.render(
+//   // <Greeting isLoggedIn={true} />
+//   // <LoginControl />
+//   // <Mailbox unreadMessages={messages} />
+//   // <LoginControlRefactoring />
+//   // <MainPage />
+//   <LandingPage />
+// );
 
 // 10장 예제
-// const numbers = [1,2,3,4,5];
-// const messages = [];
-root.render(
-  // <NumberList numbers={numbers} />
-  // < AttrndanceBook />
-);
+const numbers = [1, 2, 3, 4, 5];
+// root.render(
+//   // <NumberList numbers={numbers} />
+//   <AttendanceBook />
+// );
 
 // 11장 예제
+// root.render(
+//   // <NameForm />
+//   // <EssayForm />
+//   // <FlavorForm />
+//   // <FileInput />
+//   // <Reservation />
+//   // <ReservationRefactoring />
+//   <SignUp />
+// );
+
+// 12장 예제
+// root.render(
+//   <Calculator />
+// );
+
+// 13장 예제
 root.render(
-  // < NameForm />
-  // < EssayForm />
-  // < FlavorForm />
-  // < FileInput />
-  // < Reservation />
-  // < ReservationRefactoring />
-  < SignUp />
+  // <WelcomeDialog />
 );
 
 // If you want to start measuring performance in your app, pass a function
