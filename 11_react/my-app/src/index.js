@@ -41,6 +41,8 @@ import ReservationRefactoring from './chapter11/11.4/ReservationRefactoring';
 import SignUp from './chapter11/SignUp';
 import Calculator from './chapter12/Calculator';
 import WelcomeDialog from './chapter13/13.1.1.1/WelcomeDialog';
+import SplitPaneSection from './chapter13/13.1.1.2/SplitPaneSection';
+import DialogContainer from './chapter13/13.1.2/DialogContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -133,6 +135,8 @@ const numbers = [1, 2, 3, 4, 5];
 // 13장 예제
 root.render(
   // <WelcomeDialog />
+  // <SplitPaneSection />
+  <DialogContainer />
 );
 
 // If you want to start measuring performance in your app, pass a function
