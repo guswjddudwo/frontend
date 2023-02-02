@@ -49,15 +49,19 @@ function TodoInsert({ onInsert }) {
 
     // submit 이벤트가 발생시키는 새로고침을 방지
     e.preventDefault();
-
-  }
+  };
 
   return (  
-    // form 태그 사용 시 input에서 엔터키를 눌렀을 때도  submit 이벤트 발생
-    // 일반적으료 ketup 이벤트를 통해 엔터키를 감지하는로직을 작성
+    // form 태그 사용 시 input에서 엔터키를 눌렀을 때도 submit 이벤트 발생
+    // 일반적으로 keyup 이벤트를 통해 엔터키를 감지하는 로직을 작성
     // event.key === 'Enter'
     <TodoInsertWrapper onSubmit={handleSubmit}>
-      <StyledInput type="text" placeholder="할 일을 입력하세요." />
+      <StyledInput 
+        type="text" 
+        placeholder="할 일을 입력하세요." 
+        value={value}
+        onChange={handleChange}
+      />
       <StyledButton type="submit">
         <AddIcon />
       </StyledButton>

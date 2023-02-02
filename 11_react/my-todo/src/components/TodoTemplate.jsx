@@ -10,7 +10,7 @@ const TodoTemplateWrapper = styled.div`
   /* 컴포넌트를 따로 만들어도 되고 아니면 Sass처럼 내부에 class로 만들어도 됨 */
   /* 자손을 의미 */
   .app-title {
-    background: #548ef8;
+    background: #22b8cf;
     color: white;
     height: 4rem;
     font-size: 1.5rem;

@@ -48,6 +48,7 @@ import ProfileCard from "./chapter13/ProfileCard";
 import DarkOrLight from "./chapter14/DarkOrLight";
 import StyledPage from "./chapter15/StyledPage";
 import Blocks from "./chapter15/Blocks";
+import SimpleRouter from "./chapter16/SimpleRouter";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(
@@ -152,9 +153,13 @@ const numbers = [1, 2, 3, 4, 5];
 // );
 
 // 15장 예제
-root.render(
-  <StyledPage />
-);
+// root.render(
+//   // <StyledPage />
+//   <Blocks />
+// );
+
+// 16장 예제
+root.render(<SimpleRouter />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
