@@ -152,7 +152,12 @@ const numbers = [1, 2, 3, 4, 5];
 
 // 15장 예제
 root.render(
-  <StyledPage />
+  // <StyledPage />
+);
+
+// 16장 예제
+root.render(
+  // <Mai
 );
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
