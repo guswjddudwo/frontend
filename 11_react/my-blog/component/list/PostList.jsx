@@ -15,22 +15,18 @@ const Wrapper = styled.div`
   }
 `;
 
-// map() 함수를 사용하여 PostListItme을 반복 렌더링하는 컴포넌트
+// map() 함수를 사용하여 PostListItem을 반복 렌더링하는 컴포넌트
 function PostList(props) {
-  const {Posts,onClickItme } =props;
+  const { posts } = props;
+
   return (
     <Wrapper>
-      {/* 반복렌더링 */}
-      {Posts.map((post) => {
-        (
-          <PostListItem key={post.id}
-            post={post}
-            onClcik={() => {
-              onClickItme(post);
-            }}
-            />
-          );
-        })}
+      {/* 반복 렌더링 */}
+      {posts.map((post) => {
+        return (
+          <PostListItem key={post.id} post={post} />
+        );
+      })}
     </Wrapper>
   );
 }

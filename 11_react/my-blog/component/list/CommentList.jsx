@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import CommentListItem from './CommentListItem';
-import PostList from './PostList';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,20 +14,20 @@ const Wrapper = styled.div`
     }
   }
 `;
-// 댓글의 내용만 표시해주는 컴포넌트
+
+// map() 함수를 사용하여 CommentListItem을 반복 렌더링하는 컴포넌트
 function CommentList(props) {
-  const {comments} = props;
+  const { comments } = props;
+
   return (
     <Wrapper>
-      {/* 반복렌더링 */}
-      {comments.map((comments) => {
-        <CommentListItem 
-        key={comment.id}
-        comment={comment}
-        />
+      {/* 반복 렌더링 */}
+      {comments.map((comment) => {
+        return (
+          <CommentListItem key={comment.id} comment={comment} />
+        );
       })}
     </Wrapper>
- 
   );
 }
 
