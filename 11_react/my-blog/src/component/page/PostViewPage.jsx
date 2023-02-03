@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
+import { useNavigate,useParams } from 'react';
+import CommentList from '../list/CommentList';
+
 
 const Wrapper = styled.div`
   padding: 16px;
@@ -43,11 +46,56 @@ const CommentLabel = styled.p`
   font-weight: 500;
 `;
 
+// 글을 볼 수 잇게 해주는 페이지
 function PostViewPage(props) {
+  const navigate = useNavgate();
+  	// URL 파라미터로 전달받은 글의 id값 가져오기
+	// useParams(): 사용자가 URL 파라미터에 입력한 겂을 가져올 수 있음
+	const {postId} = useParams();
+	console.log(useParams());
+
+  const post = data.find(() => {
+    return item.id == postId;
+  })
+
+  const [comment, setComment] = useState('');
   return (
-    <div>
-      
-    </div>
+    <Wrapper>
+    <Container>
+      {/* 댓글 작성버튼 */}
+      <Button
+      title='뒤로가기'
+      onClick={(e) => {
+        navigate('/');
+      }}
+      />
+
+      <PostContainer>
+        <TitleText>{post.title}</TitleText>
+        <ContentText>{post.content}</ContentText>
+      </PostContainer>
+
+      <CommentLabel>댓글</CommentLabel>
+      <CommentList comments={post.comments} />
+
+      {/* 댓글 입력 */}
+      <TextInput 
+      height={40}
+      value={Comment}
+      onChange={(e) => {
+        setComment(e.target.value);
+      }}
+      />
+
+      {/* 댓글 작성버튼 */}
+      <Button
+      title='댓글 작성하기'
+      onClick={(e) => {
+        navigate('/');
+      }}
+      />
+    </Container>
+  </Wrapper>
   );
 }
 
