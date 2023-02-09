@@ -58,7 +58,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // 3장 예제
 // root.render(
 //   // <JsxUse />
-//   <Library />
+//   // <Library />
 // );
 
 // 4장 예제
@@ -71,8 +71,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // 5장 예제
 // root.render(
-//   // <PropUse />
-//   <CommentList />
+//   <PropUse />
+//   // <CommentList />
 // );
 
 // 6장 예제
@@ -81,20 +81,20 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // );
 
 // 7장 예제
-// root.render(
-//   <Counter />
-//   // <CounterEffect />
-//   // <SetStateMerge />
-//   // <EffectSummary />
-//   // <EffectContainer />
-//   // <TimerContainer />
-//   // <HeavyCalculator />
-//   // <ParentComponent />
-//   // <TextInputWithFocusButton />
-//   // <ComponentVariable />
-//   // <InputContainer />
-//   // <Accommodate />
-// );
+root.render(
+  // <Counter />
+  // <CounterEffect />
+  // <SetStateMerge />
+  // <EffectSummary />
+  // <EffectContainer />
+  // <TimerContainer />
+  <HeavyCalculator />
+  // <ParentComponent />
+  // <TextInputWithFocusButton />
+  // <ComponentVariable />
+  // <InputContainer />
+  // <Accommodate />
+);
 
 // 8장 예제
 // root.render(
@@ -159,9 +159,9 @@ const numbers = [1, 2, 3, 4, 5];
 // );
 
 // 16장 예제
-root.render(
-  <SimpleRouter />
-);
+// root.render(
+//   <SimpleRouter />
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -47,6 +47,10 @@ function App() {
     setTodos(dbTodos);
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  },[todos]);
+
   // todos 배열에 새 객체를 추가하기 위한 handleInsert() 함수 정의
   // 새 객체를 만들 때마다 id값에 1씩 더해 주어야 하는데 useRef()를 사용하여 변수 생성
   // id값은 렌더링되는 정보가 아니기 때문에 ref 사용
@@ -56,8 +60,7 @@ function App() {
   // props로 전달해야 할 함수를 만들 때는 useCallback()을 사용해본다!
   // useCallback() 미사용 시 컴포넌트가 재렌더링 될 때마다 새롭게 정의됨
   // => props로 넘겨지는 값이 바뀌므로 자식 컴포넌트가 재렌더링
-  const handleInsert = useCallback(
-    (text) => {
+  const handleInsert = useCallback((text) => {
       const todo = {
         // id: nextId.current,
         id: uuidv4(),
@@ -74,17 +77,13 @@ function App() {
       setTodos(todos.concat(todo)); // 새로운 배열 반환함
 
       nextId.current += 1; // nextId에 1씩 더하기
-
-      // 로컬 스토리지에 저장
-      localStorage.setItem("todos", JSON.stringify(todos.concat(todo)));
     },
     [todos]
   );
 
   // todos 배열에서 id로 항목을 지우기 위한 handleRemove() 함수 정의
   // 불변성을 지키면서 배열의 요소를 제거해야할 때 filter() 활용
-  const handleRemove = useCallback(
-    (id) => {
+  const handleRemove = useCallback((id) => {
       // 방법1 - 이전 방법
       // const copyTodos = [...todos];
       // const targetIndex = todos.findIndex((todo) => todo.id === id);
@@ -95,15 +94,7 @@ function App() {
       // filter('테스트 함수'): 기존의 배열은 변경하지 않고 특정 조건을 만족하는 요소들만 따로 추출하여 새로운 배열을 만듦
       // 테스트 함수에서는 true 또는 false를 반환해야 하며, 여기서 true를 반환하는 경우만 새로운 배열에 포함됨
       setTodos(todos.filter((todo) => todo.id !== id));
-
-      // 로컬 스토리지에 저장
-      localStorage.setItem(
-        "todos",
-        JSON.stringify(todos.filter((todo) => todo.id !== id))
-      );
-    },
-    [todos]
-  );
+    },[todos]);
 
   // todos 배열의 특정 요소를 수정하기 위한 handleToggle() 함수 정의
   // 불변성을 유지하면서 배열의 특정 요소를 업데이트 해야할 때 map() 활용
@@ -120,22 +111,7 @@ function App() {
       // 방법2 - 배열의 내장 함수 이용
       setTodos(
         todos.map((todo) =>
-          todo.id === id ? { ...todo, checked: !todo.checked } : todo
-        )
-      );
-
-      // 로컬 스토리지에 저장
-      localStorage.setItem(
-        "todos",
-        JSON.stringify(
-          todos.map((todo) =>
-            todo.id === id ? { ...todo, checked: !todo.checked } : todo
-          )
-        )
-      );
-    },
-    [todos]
-  );
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo));},[todos]);
 
   return (
     <>
