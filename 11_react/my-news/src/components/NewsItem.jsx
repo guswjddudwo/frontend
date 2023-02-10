@@ -47,7 +47,7 @@ function NewsItem({ article }) {
         </div>
       )}
 
-      <div className="contents"></div>
+      <div className="contents">
          <h2>
          <a href={url} target="_blank">
           {title}
