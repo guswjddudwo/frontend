@@ -73,10 +73,55 @@ const Category = styled.div`
     `}
 `;
 
-function Categories() {
+// NavLink
+const CategoryLink = styled(NavLink)`
+  font-size: 1.125rem;
+  white-space: pre;
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 0.25rem;
+  cursor: pointer;
+
+  &:hover {
+    color: #495057;
+  }
+
+  & + & {
+    margin-left: 1rem;
+  }
+
+  /* active라는 클래스 값이 잇으면 적용 */
+  &.active{   
+      font-weight: 600;
+      border-bottom: 2px solid #22b8cf;
+      color: #22b8cf;
+      &:hover {
+        color: #3bc9db;
+      }
+    }
+`;
+
+function Categories({ category,onSelect }) {
   return (
     <CategoriesBlock>
-      
+      {categories.map(c => (
+        // <Category
+        // key={c.name}
+        // active={c.name === category}
+        // onClick={() => {
+        //   onSelect(c.name);
+        // }}
+        // >
+        // {c.text}
+        // </Category>
+
+        <CategoryLink
+        key={c.name}
+        to={c.name === 'all' ? '/' : `/${c.name}`}
+        >
+          {c.text}
+        </CategoryLink>
+      ))}
     </CategoriesBlock>
   );
 };
