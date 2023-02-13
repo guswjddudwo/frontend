@@ -60,7 +60,7 @@ function SimpleRouter(props) {
 
         {/* *의 의미는 match anything */}
         {/* 위에 설정한 라우팅 경로 이외에 경우 */}
-        <Route path="*" element={<NoMatchPage />} />
+        {/* <Route path="*" element={<NoMatchPage />} /> */}
       </Routes>
     </BrowserRouter>
   );
