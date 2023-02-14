@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // 부트스트랩 css 추가
 import { Route, Routes } from "react-router-dom";
 import Header from "./pages/Header";
 import Main from "./pages/Main";
+import ProductDetail from "./pages/ProductDetail";
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -39,6 +40,8 @@ function App() {
       <Route path="/" element={<Header/>} >
         {/* index: index route(여기서는 default child route) */}
         <Route index element={<Main/>}/>
+        {/* /detail/1 로 접속하면 product에 1이 담김 */}
+        <Route path="/detail/:productId" element={<ProductDetail/>} />
       </Route>
     </Routes>
     </>
