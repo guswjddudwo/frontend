@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // App 컴포넌트와 그 하위 자식들은 Redux Store 접근 가능하고 저장된 state들을 마음대로 꺼내 쓸 수 있음
-  <Provider store={store}></Provider>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
