@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Alert, Button, Col, Container, Form, Nav, Row } from 'react-bootstrap';
+import { Alert, Button, Col, Container, Form, Modal, Nav, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { getProductById, selectSelectedProduct } from "../features/product/productSlice";
 
@@ -33,6 +33,10 @@ function ProductDetail(props) {
   const [showInfo, setShowInfo] = useState(true); // Info창 상태
   const [orderCount, setOrderCount] = useState(1); // 주문수량 상태
   const [showTabIndex, setShowTabIndex] = useState(0); // 탭 index 상태
+  const [showModal, setShowModal] = useState(false); // 모달 상태
+  const handleClose = () => setShowModal(false);
+  const handleOpen = () => setShowModal(true);
+  const navigate = useNavigate();
 
   // 처음 마운트 됐을때 서버에 상품 id를 이용하여 데이터를 요청하고 그 결과를 리덕스 스토어에 저장
   useEffect(() => {
@@ -42,6 +46,16 @@ function ProductDetail(props) {
       return product.id === productId;
     });
     dispatch(getProductById(foundProduct));
+
+    // 상세 페이지에 들어오면 해당 상품의 id를 localStorage에 추가
+    let latestViewed = JSON.parse(localStorage.getItem('latestViewed')) || [];
+    // id를 넣기전에 기존 배열에 존재하는 검사하거나 
+    // 또는 일단 넣고 Set 자료형을 이용하여 중복 제거
+    latestViewed.push(productId);
+    latestViewed = new Set(latestViewed);
+    // latestViewed = Array.from(latestViewed);
+    latestViewed = [...latestViewed];
+    localStorage.setItem('latestViewed', JSON.stringify(latestViewed));
 
     // 3초 뒤에 info창 사라지게 만들기
     const timeout = setTimeout(() => {
@@ -110,6 +124,8 @@ function ProductDetail(props) {
                 price: product.price, 
                 count: orderCount 
               }));
+
+              handleOpen(); // 장바구니 모달 열기
             }}
           >장바구니</Button>
         </Col>
@@ -168,6 +184,24 @@ function ProductDetail(props) {
         }[showTab]
       } */}
 
+      {/* 장바구니 담기 모달 */}
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>🛒 고니네 샵 알림</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          장바구니에 상품을 담았습니다.<br />
+          장바구니로 이동하시겠습니까?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            취소
+          </Button>
+          <Button variant="primary" onClick={() => { navigate('/cart'); }}>
+            확인
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 }

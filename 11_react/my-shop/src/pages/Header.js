@@ -11,7 +11,7 @@ function Header(props) {
       <header>
         <Navbar bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="#" onClick={() => { navigate('/'); }}>고니네 샵</Navbar.Brand>
+            <Navbar.Brand href="#" onClick={() => { navigate('/'); }}>현정네 샵</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link onClick={() => { navigate('/'); }}>홈</Nav.Link>
               <Nav.Link onClick={() => { navigate('/cart'); }}>장바구니</Nav.Link>
