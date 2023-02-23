@@ -148,7 +148,7 @@ const numbers = [1, 2, 3, 4, 5];
 //   // <SplitPaneSection />
 //   // <DialogContainer />
 //   // <SignUpDialog />
-//   <ProfileCard />
+//   // <ProfileCard />
 // );
 
 // // 14장 예제
@@ -173,13 +173,13 @@ const numbers = [1, 2, 3, 4, 5];
 // );
 
 // 18장 예제
-root.render(
-  // 2. 리액트에 Redux Store 제공하기
-  //  CounterApp 컴포넌트와 그 하위 자식들은 Redux Store에 접근 가능
-  <Provider store={store}>
-    <CounterApp />
-  </Provider>
-);
+// root.render(
+//   // 2. 리액트에 Redux Store 제공하기
+//   //  CounterApp 컴포넌트와 그 하위 자식들은 Redux Store에 접근 가능
+//   <Provider store={store}>
+//     <CounterApp />
+//   </Provider>
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
